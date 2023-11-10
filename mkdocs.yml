@@ -1,0 +1,62 @@
+site_name: KeepYourMouthShut
+site_description: Acid Reflux for your Ears!
+site_author: Rajtilak Bhattacharjee
+site_url: https://www.keepyourmouthshut.net
+
+repo_url: https://github.com/rajtilakjee/keepyourmouthshut
+repo_name: keepyourmouthshut
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.top
+    - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/rajtilakjee
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/rajtilakjee
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/rajtilak/
+    - icon: fontawesome/brands/discord
+      link: https://discordapp.com/users/969666251536347146
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+copyright: >-
+  Copyright &copy; 2023 Rajtilak Bhattacharjee
+
+nav:
+  - Home: index.md
+  - Usage: usage.md
+  - Development: development.md
+  - Resources: resources.md
+  - Acknowledgement: acknowledgement.md

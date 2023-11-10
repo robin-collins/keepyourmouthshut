@@ -1,6 +1,5 @@
-typer[all]
 elevenlabs
 pydub
-pyyaml
+PyYAML
 openai
 streamlit
