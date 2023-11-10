@@ -1,0 +1,6 @@
+typer[all]
+elevenlabs
+pydub
+pyyaml
+openai
+streamlit
