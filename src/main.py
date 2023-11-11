@@ -1,6 +1,5 @@
 import uuid
-
-import openai
+import streamlit as st
 from elevenlabs import set_api_key
 from pydub import AudioSegment
 
@@ -11,29 +10,20 @@ from utils import date_stuff, eleven_labs_stuff, open_ai_stuff, string_stuff
 _SECOND = 1000
 
 
-def main():
+def gencast(name, desc, topics, ads):
     current_date = date_stuff.get_tomorrows_date_for_file_names()
     unique_id = uuid.uuid4()
 
     # (CONTENT) Generate scripts for top 3 comments from FIRST pinned post
-    name = input("Please enter the name of the Podcast: ")
-    desc = input("Please enter the description of the Podcast: ")
-    openai.organization = input("Please enter your OpenAI Org: ")
-    openai.api_key = input("Please enter your OpenAI API key: ")
-    eleven_labs_api_key = input("Please enter your ElevenLabs API key: ")
-    set_api_key(eleven_labs_api_key)
-
     script_segments = []
     for i in range(3):
-        comment = input(f"Enter topic for segment {i + 1}: ")
-        script_segment = open_ai_stuff.generate_response(podcast_segment.SYSTEM_PROMPT, podcast_segment.PROMPT.format(topic=comment))
+        script_segment = open_ai_stuff.generate_response(podcast_segment.SYSTEM_PROMPT, podcast_segment.PROMPT.format(topic=topics))
         script_segments.append(script_segment)
 
     # (ADS) Generate scripts for top 2 comments from SECOND pinned post
     script_ads = []
     for j in range(2):
-        comment = input(f"Enter topic for advertisement {i + 1}: ")
-        script_ad = open_ai_stuff.generate_response(podcast_ads.SYSTEM_PROMPT, podcast_ads.PROMPT.format(product=comment))
+        script_ad = open_ai_stuff.generate_response(podcast_ads.SYSTEM_PROMPT, podcast_ads.PROMPT.format(product=ads))
         script_ads.append(script_ad)
 
     # Generate an intro for the generated material
@@ -173,5 +163,38 @@ def main():
     podcast.export(output_file, format="mp3")
 
 
-if __name__ == "__main__":
-    main()
+st.title("KeepYourMouthShut")
+
+with st.sidebar:
+    openai_api_key = st.text_input("OpenAI API Key", type="password")
+    "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+    eleven_labs_api_key = st.text_input("ElevenLabs API key", type="password")
+    "[Get an ElevenLabs API key](https://elevenlabs.io)"
+    set_api_key(eleven_labs_api_key)
+
+with st.form("main_form"):
+    st.subheader("Basic Information")
+    name = st.text_input("Podcast Name")
+    desc = st.text_input("Description/Tagline")
+
+    st.subheader("Segments")
+    topic1 = st.text_area("Topic for First Segment")
+    topic2 = st.text_area("Topic for Second Segment")
+    topic3 = st.text_area("Topic for Third Segment")
+
+    st.subheader("Advertisements")
+    ad1 = st.text_area("First Advertisement")
+    ad2 = st.text_area("Second Advertisement")
+
+    submitted = st.form_submit_button("Submit")
+
+    if not openai_api_key and not eleven_labs_api_key:
+        st.info("Please add both your OpenAI API key and ElevenLabs API key to continue.")
+    elif not openai_api_key:
+        st.info("Please add your OpenAI API key to continue.")
+    elif not eleven_labs_api_key:
+        st.info("Please add your ElevenLabs API key to continue.")
+    elif submitted:
+        topics = ['topic1', 'topic2', 'topic3']
+        ads = ['ad1', 'ad2']
+        gencast(name, desc, topics, ads)
