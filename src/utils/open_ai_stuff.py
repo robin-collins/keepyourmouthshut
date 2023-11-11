@@ -4,7 +4,7 @@ import openai
 
 
 def generate_response(system_prompt, user_prompt):
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-4",
         messages=[
             {

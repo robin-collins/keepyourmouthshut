@@ -16,8 +16,8 @@ def main():
     unique_id = uuid.uuid4()
 
     # (CONTENT) Generate scripts for top 3 comments from FIRST pinned post
-    name = input("Please enter the name of the Podcast")
-    desc = input("Please enter the description of the Podcast")
+    name = input("Please enter the name of the Podcast: ")
+    desc = input("Please enter the description of the Podcast: ")
     openai.organization = input("Please enter your OpenAI Org: ")
     openai.api_key = input("Please enter your OpenAI API key: ")
     eleven_labs_api_key = input("Please enter your ElevenLabs API key: ")
