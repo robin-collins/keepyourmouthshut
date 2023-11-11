@@ -5,7 +5,7 @@
 - If you want to develop in a local environment, simply clone the repo `git clone https://github.com/rajtilakjee/kyms.git` and start developing.
 - If you want to develop on a Gitpod, click on the following link:
 
-    [Open in Gitpod](https://gitpod.io/#https://github.com/rajtilakjee/kyms-cli)
+  [Open in Gitpod](https://gitpod.io/#https://github.com/rajtilakjee/kyms-cli)
 
 ## Dependencies
 
