@@ -2,6 +2,7 @@ import uuid
 import streamlit as st
 from elevenlabs import set_api_key
 from pydub import AudioSegment
+import openai
 
 from prompts import (podcast_ads, podcast_intro, podcast_outro,
                      podcast_segment, podcast_segue)
@@ -16,21 +17,20 @@ def gencast(name, desc, topics, ads):
 
     # (CONTENT) Generate scripts for top 3 comments from FIRST pinned post
     script_segments = []
-    for i in range(3):
-        script_segment = open_ai_stuff.generate_response(podcast_segment.SYSTEM_PROMPT, podcast_segment.PROMPT.format(topic=topics))
+    for topic in topics::
+        script_segment = open_ai_stuff.generate_response(podcast_segment.SYSTEM_PROMPT, podcast_segment.PROMPT.format(topic=topic))
         script_segments.append(script_segment)
 
     # (ADS) Generate scripts for top 2 comments from SECOND pinned post
     script_ads = []
-    for j in range(2):
-        script_ad = open_ai_stuff.generate_response(podcast_ads.SYSTEM_PROMPT, podcast_ads.PROMPT.format(product=ads))
+    for ad in ads:
+        script_ad = open_ai_stuff.generate_response(podcast_ads.SYSTEM_PROMPT, podcast_ads.PROMPT.format(product=ad))
         script_ads.append(script_ad)
 
     # Generate an intro for the generated material
-    intro = open_ai_stuff.generate_gpt4_response(
+    intro = open_ai_stuff.generate_response(
         podcast_intro.SYSTEM_PROMPT,
         podcast_intro.PROMPT.format(
-            date=date_stuff.get_tomorrows_date_for_speech(),
             segment_1=script_segments[0],
             segment_2=script_segments[1],
             segment_3=script_segments[2],
@@ -39,7 +39,7 @@ def gencast(name, desc, topics, ads):
         ),
     )
 
-    segue_1 = open_ai_stuff.generate_gpt4_response(
+    segue_1 = open_ai_stuff.generate_response(
         podcast_segue.SYSTEM_PROMPT,
         podcast_segue.PROMPT.format(
             count_descriptor="first",
@@ -47,7 +47,7 @@ def gencast(name, desc, topics, ads):
         ),
     )
 
-    segue_2 = open_ai_stuff.generate_gpt4_response(
+    segue_2 = open_ai_stuff.generate_response(
         podcast_segue.SYSTEM_PROMPT,
         podcast_segue.PROMPT.format(
             count_descriptor="second",
@@ -55,7 +55,7 @@ def gencast(name, desc, topics, ads):
         ),
     )
 
-    segue_3 = open_ai_stuff.generate_gpt4_response(
+    segue_3 = open_ai_stuff.generate_response(
         podcast_segue.SYSTEM_PROMPT,
         podcast_segue.PROMPT.format(
             count_descriptor="third",
@@ -63,7 +63,7 @@ def gencast(name, desc, topics, ads):
         ),
     )
 
-    outro = open_ai_stuff.generate_gpt4_response(
+    outro = open_ai_stuff.generate_response(
         podcast_outro.SYSTEM_PROMPT,
         podcast_outro.PROMPT.format(
             segment_1=script_segments[0],
@@ -77,7 +77,7 @@ def gencast(name, desc, topics, ads):
     )
 
     # Write the script to a file
-    output_dir = "generated_podcast_scripts/"
+    output_dir = "src/generated_podcast_scripts/"
     output_file = f"{output_dir}{current_date}_{unique_id}.txt"
     with open(output_file, "w+") as script_file:
         script_file.write(
@@ -158,7 +158,7 @@ def gencast(name, desc, topics, ads):
     podcast += outro_audio
 
     # Export the final audio file
-    output_dir = "generated_podcast_mp3s/"
+    output_dir = "src/generated_podcast_mp3s/"
     output_file = f"{output_dir}{current_date}_{unique_id}.mp3"
     podcast.export(output_file, format="mp3")
 
@@ -171,6 +171,7 @@ with st.sidebar:
     eleven_labs_api_key = st.text_input("ElevenLabs API key", type="password")
     "[Get an ElevenLabs API key](https://elevenlabs.io)"
     set_api_key(eleven_labs_api_key)
+    openai.api_key = openai_api_key
 
 with st.form("main_form"):
     st.subheader("Basic Information")
