@@ -162,6 +162,10 @@ def gencast(name, desc, topics, ads):
     output_file = f"{output_dir}{current_date}_{unique_id}.mp3"
     podcast.export(output_file, format="mp3")
 
+    # Provide Streamlit download button
+    st.download_button("Download Script", script_file)
+    st.download_button("Download Audio", podcast)
+
 
 st.title("KeepYourMouthShut")
 
@@ -196,6 +200,6 @@ with st.form("main_form"):
     elif not eleven_labs_api_key:
         st.info("Please add your ElevenLabs API key to continue.")
     elif submitted:
-        topics = ['topic1', 'topic2', 'topic3']
-        ads = ['ad1', 'ad2']
+        topics = [topic1, topic2, topic3]
+        ads = [ad1, ad2]
         gencast(name, desc, topics, ads)

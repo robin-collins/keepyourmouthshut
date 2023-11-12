@@ -9,14 +9,14 @@ HOST_VOICE = Voice(
     voice_id="r31dnNrpatHkOShYZdYQ",
     name="Mia",
     category="generated",
-    settings=VoiceSettings(stability=0.35, similarity_boost=0.9),
+    settings=VoiceSettings(stability=0.35, similarity_boost=0.9, style=0.0, use_speaker_boost=True),
 )
 
 ADS_VOICE = Voice(
     voice_id="LQITRrHstASVE8MDit6F",
     name="Johnathan",
     category="generated",
-    settings=VoiceSettings(stability=0.35, similarity_boost=0.9),
+    settings=VoiceSettings(stability=0.35, similarity_boost=0.9, style=0.0, use_speaker_boost=True),
 )
 
 
