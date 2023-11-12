@@ -17,7 +17,7 @@ def gencast(name, desc, topics, ads):
 
     # (CONTENT) Generate scripts for top 3 comments from FIRST pinned post
     script_segments = []
-    for topic in topics::
+    for topic in topics:
         script_segment = open_ai_stuff.generate_response(podcast_segment.SYSTEM_PROMPT, podcast_segment.PROMPT.format(topic=topic))
         script_segments.append(script_segment)
 
