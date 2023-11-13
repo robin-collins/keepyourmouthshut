@@ -162,12 +162,21 @@ def gencast(name, desc, topics, ads):
     output_file = f"{output_dir}{current_date}_{unique_id}.mp3"
     podcast.export(output_file, format="mp3")
 
-    # Provide Streamlit download button
-    st.download_button("Download Script", script_file)
-    st.download_button("Download Audio", podcast)
 
+st.set_page_config(
+    page_title="KeepYourMouthShut",
+    page_icon=":speak_no_evil:",
+    layout="centered",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.reddit.com/r/KeepYourMouthShut/',
+        'Report a bug': "https://github.com/rajtilakjee/keepyourmouthshut/issues",
+        'About': "https://www.keepyourmouthshut.net/"
+    }
+)
 
 st.title("KeepYourMouthShut")
+st.snow()
 
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", type="password")
