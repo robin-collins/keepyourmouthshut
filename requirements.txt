@@ -3,4 +3,3 @@ pydub
 PyYAML
 openai
 streamlit
-mkdocs-material
