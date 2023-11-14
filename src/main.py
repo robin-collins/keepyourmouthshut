@@ -176,7 +176,6 @@ st.set_page_config(
 )
 
 st.title("KeepYourMouthShut")
-st.snow()
 
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", type="password")
