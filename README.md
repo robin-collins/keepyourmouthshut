@@ -1,3 +1,35 @@
-# KeepYourMouthShut
+<p align="center">
+    <img src="assets/kyms-logo.png" width="200" height="200"/>
+</p>
+<h1 style="text-align: center;">KeepYourMouthShut</h1>
 
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/rajtilakjee/keepyourmouthshut) - ![Netlify](https://img.shields.io/netlify/b1b62d2d-3ac1-4559-a94c-445226a2baa1) - ![GitHub](https://img.shields.io/github/license/rajtilakjee/keepyourmouthshut) - ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rajtilakjee/keepyourmouthshut) - ![GitHub followers](https://img.shields.io/github/followers/rajtilakjee) - ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/rajtilakjee)
+![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![GitHub release (with filter)](https://img.shields.io/github/v/release/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![GitHub License](https://img.shields.io/github/license/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/rajtilakjee/keepyourmouthshut/1.0.0?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/rajtilakjee/keepyourmouthshut?style=for-the-badge)
+
+## 🎙️ Introduction
+
+[KeepYourMouthShut](https://www.keepyourmouthshut.net/) is an app that aims to provide 360-degree solution for Podcasters. From writing the scripts to providing an unique voice, KeepYourMouthShut has the ability to produce an entire episode for your Podcast all by itself.
+
+## 📑 Features
+
+- Smart Script Creation
+- Dynamic Voice Synthesis
+- Continuous Enhancement
+- Ad Integration and Monetization
+- Comprehensive Support
+- Cutting-Edge Tech Utilization
+
+## 📷 Setup
+
+Please find the latest `Docker` image from the [Release pages](https://github.com/rajtilakjee/keepyourmouthshut/releases).
+
+## 🧑🏾‍🤝‍🧑🏻 Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request if you have a way to improve this project.
+
+Make sure your request is meaningful and you have tested the app locally before submitting a pull request.
+
+Refer to [CONTRIBUTING.md](CONTRIBUTING.md) for more details on contributing, installing requirements, and running the application.
+
+## 💸 Support
+
+💙 If you like this project, give it a ⭐ and share it with friends! You may also consider sponsoring or backing this project.
