@@ -57,6 +57,5 @@ copyright: >-
 nav:
   - Home: index.md
   - Usage: usage.md
-  - Development: development.md
   - Resources: resources.md
   - Acknowledgement: acknowledgement.md
