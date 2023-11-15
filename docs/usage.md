@@ -1,17 +1,20 @@
-# How to install KYMS CLI
+# How to use KeepYourMouthShut
 
-## Using pip
+## Using the GitHub repository
 
-The simples way to install kyms is using the following command:
+1. Clone the GitHub repository:\
+   `git clone https://github.com/rajtilakjee/keepyourmouthshut.git`
+2. Create a virtual environment using `venv`\
+   `python -m venv .venv`
+3. Activate the virtual environment\
+   `.venv\Script\activate`
+4. Install the dependencies\
+   `pip install -r requirements.txt`
+5. Run the app\
+   `streamlit run src/main.py`
 
-```
-pip install kyms-cli
-```
+## Using the Docker image
 
-## How to use
-
-Once install, use the following command to generate a complete podcast episode:
-
-```
-kyms-cli gencast
-```
+1. Pull the Docker image\
+   `docker pull rajtilakjee/keepyourmouthshut:1.0.0`
+2. Start using the image
