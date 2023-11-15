@@ -1,9 +1,8 @@
-<p align="center">
-    <img src="assets/kyms-logo.png" width="200" height="200"/>
-</p>
-<h1 style="text-align: center;">KeepYourMouthShut</h1>
+<img src="assets/kyms-logo.png"  width="150" height="150">
 
-![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![GitHub release (with filter)](https://img.shields.io/github/v/release/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![GitHub License](https://img.shields.io/github/license/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/rajtilakjee/keepyourmouthshut/1.0.0?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/rajtilakjee/keepyourmouthshut?style=for-the-badge)
+# KeepYourMouthShut
+
+![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![GitHub release (with filter)](https://img.shields.io/github/v/release/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![GitHub License](https://img.shields.io/github/license/rajtilakjee/keepyourmouthshut?style=for-the-badge) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/rajtilakjee/keepyourmouthshut/1.0.0?style=for-the-badge)
 
 ## 🎙️ Introduction
 
@@ -11,12 +10,19 @@
 
 ## 📑 Features
 
-- Smart Script Creation
-- Dynamic Voice Synthesis
-- Continuous Enhancement
-- Ad Integration and Monetization
-- Comprehensive Support
-- Cutting-Edge Tech Utilization
+📢 Open-source (_free software, hell yeah!_)
+
+⚡️ Smart Script Creation
+
+🚀 Dynamic Voice Synthesis
+
+🤖 Continuous Enhancement
+
+🐞 Ad Integration and Monetization
+
+🎉 Comprehensive Support
+
+🎟️ Cutting-Edge Tech Utilization
 
 ## 📷 Setup
 

@@ -165,7 +165,7 @@ def gencast(name, desc, topics, ads):
 
 st.set_page_config(
     page_title="KeepYourMouthShut",
-    page_icon=":speak_no_evil:",
+    page_icon="assets/kyms-logo.png",
     layout="centered",
     initial_sidebar_state="expanded",
     menu_items={
@@ -176,6 +176,7 @@ st.set_page_config(
 )
 
 st.title("KeepYourMouthShut")
+st.sidebar.image("assets/kyms-logo.png")
 
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", type="password")
